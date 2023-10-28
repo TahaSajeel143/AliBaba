@@ -8,11 +8,12 @@ const userSignUp = (req, res, next) => {
         lastName,
         password,
         email,
-        dob,
-        age,
-        schoolName,
-        schoolContact,
-        phone
+        purpose,
+        companyname,
+        phone,
+        country,
+        isnotbussinessentinty,
+
     } = req.body;
 
 
@@ -31,12 +32,12 @@ const userSignUp = (req, res, next) => {
                         firstName,
                         lastName,
                         email,
-                        dob,
-                        age,
-                        schoolName,
-                        schoolContact,
-                        password: hashedpassword,
+                        password:hashedpassword,
+                        purpose,
+                        companyname,
                         phone,
+                        country,
+                        isnotbussinessentinty,
                         userType: 'user',
                     });
                     // console.log(User);

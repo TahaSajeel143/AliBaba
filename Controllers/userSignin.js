@@ -19,7 +19,7 @@ const createToken = (user, res, next) => {
         _id: id,
         email,
         firstName,
-        lastName
+        lastName,
 
     };
     console.log(payload);
@@ -46,26 +46,46 @@ const createToken = (user, res, next) => {
 
 const userSignIn = (req, res, next) => {
     const { email, password } = req.body;
+
+    // Step 1: Log that the function has started
+    console.log('Step 1: Function started');
+
     // Find user with the passed email
     Model.UserModel.findOne({ email }).then(user => {
+        // Step 2: Log that the user has been found or not
+        console.log('Step 2: User found:', user);
+
         if (user) {
             // if email found compare the password
             bcryptjs.compare(password, user.password).then(result => {
+                // Step 3: Log the result of password comparison
+                console.log('Step 3: Password comparison result:', result);
+
                 // if password match create payload
                 if (result) {
+                    // Step 4: Log that the password is valid
+                    console.log('Step 4: Password is valid. Creating token.');
                     createToken(user, res, next);
                 } else {
+                    // Step 5: Log that the password is invalid
+                    console.log('Step 5: Password is invalid. Sending 400 response.');
                     res.status(400);
                     next(new Error('Invalid Password'));
                 }
             });
         } else {
+            // Step 6: Log that no user was found with the provided email
+            console.log('Step 6: No user found with the provided email. Sending 400 response.');
+            
             // Wrong Password.
             res.status(400);
             next(new Error('No User Exist With This Email'));
         }
     });
 };
+
+
+
 const getAlluser = (req, res) => {
     Model.UserModel.find()
         .then(events => {
