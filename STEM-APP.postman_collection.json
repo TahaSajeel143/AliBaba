@@ -1,0 +1,1067 @@
+{
+	"info": {
+		"_postman_id": "be1e2c6a-f652-44d0-914b-9a25e1a373d3",
+		"name": "STEM-APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6522626"
+	},
+	"item": [
+		{
+			"name": "Local Api",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "UserSignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"sania\",\r\n    \"lastName\": \"khan\",\r\n    \"password\": \"xd1234rt\",\r\n    \"email\": \"sania@gmail.com\",\r\n    \"dob\": \"1996/09/21\",\r\n    \"age\": \"26\",\r\n    \"schoolName\": \"beaconhouse\",\r\n    \"schoolContact\": \"22928292\",\r\n    \"phone\": \"09292-2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/signup/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UserSignIn",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"email\": \"sania@gmail.com\",\r\n    \"password\": \"xd1234rt\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/signin/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"signin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wishlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgxNzMzMTM5LCJleHAiOjE3MTMyNjkxMzl9.aLNsHFmAHgXEtI2bsza9IHWLxlmwRhkNWWe3IdJKLho",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"item\": \"introduction to AI\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/courses/addToWishlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"courses",
+										"addToWishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Courses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9080/courses/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"courses",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9080/content/6439566891f6698ae4aa5a14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"content",
+										"6439566891f6698ae4aa5a14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Courses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9080/courses/6439566891f6698ae4aa5a14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"courses",
+										"6439566891f6698ae4aa5a14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9080/content/con/64396b022e18466980eaaae3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"content",
+										"con",
+										"64396b022e18466980eaaae3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9080/test/64396b022e18466980eaaae3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"test",
+										"64396b022e18466980eaaae3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgxNzk5MTk0LCJleHAiOjE3MTMzMzUxOTR9.XBbcACnT37Pt3rRUA4d6YnYtQq2rMQ3vJqR0HCckvtk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"courseId\":\"6439566891f6698ae4aa5a14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/event/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"event",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin Operations",
+					"item": [
+						{
+							"name": "Add courses",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"courseName\":\"AI with Game Design Level 2\",\r\n    \"maxCapacity\":\"30\",\r\n    \"instructorId\":\"643528c33f47a03bc8c791e9\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/courses/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"courses",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit course",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instructorId\":\"\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/courses/edit/6439566891f6698ae4aa5a14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"courses",
+										"edit",
+										"6439566891f6698ae4aa5a14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add content",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lessonName\": \"AI with Game design\",\r\n    \"lessonContent\": [\r\n        {\r\n            \"Def\": \"Artificial Intelligence is a method of making a computer, a computer-controlled robot, or a software think intelligently like the human mind. AI is accomplished by studying the patterns of the human brain and by analyzing the cognitive process. The outcome of these studies develops intelligent software and systems.\"\r\n        }\r\n    ],\r\n    \"courseId\": \"6439566891f6698ae4aa5a14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/content/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"content",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add test",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"testName\": \"Test\",\r\n  \"testContent\": [\r\n    {\r\n      \"question\": \"What is artificial intelligence (AI)?\",\r\n      \"options\": [\"The study of natural language processing\", \" A type of computer hardware\", \"The ability of machines to perform tasks that normally require human intelligence\", \"The study of computer programming\"],\r\n      \"correctOptionIndex\": 2\r\n    },\r\n    {\r\n      \"question\": \"What are some examples of AI applications?\",\r\n      \"options\": [\"Social media platforms\", \"Robotics\", \"Healthcare\", \"All of the above\"],\r\n      \"correctOptionIndex\": 1\r\n    }\r\n  ],\r\n  \"contentId\":\"64396b022e18466980eaaae3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/test/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"test",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Instructor",
+					"item": [
+						{
+							"name": "InstructorSignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"hamza\",\r\n    \"lastName\": \"ali\",\r\n    \"email\": \"alih1414@gmail.com\",\r\n    \"dob\": \"10-9-2001\",\r\n    \"age\": \"21\",\r\n    \"password\": \"hello123\",\r\n    \"phone\": \"0202292\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/signup/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Instructorsign in",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"email\": \"sania@gmail.com\",\r\n    \"password\": \"xd1234rt\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/signin/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"signin",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Production Api",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "UserSignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"ali\",\r\n    \"lastName\": \"khan\",\r\n    \"password\": \"xd1234rt\",\r\n    \"email\": \"ali@gmail.com\",\r\n    \"dob\": \"1996/09/21\",\r\n    \"age\": \"26\",\r\n    \"schoolName\": \"beaconhouse\",\r\n    \"schoolContact\": \"22928292\",\r\n    \"phone\": \"09292-2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signup/",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UserSignIn",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"email\": \"affaqkhan211@gmail.com\",\r\n    \"password\": \"password\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signin/",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wishlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgxNzMzMTM5LCJleHAiOjE3MTMyNjkxMzl9.aLNsHFmAHgXEtI2bsza9IHWLxlmwRhkNWWe3IdJKLho",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"item\": \"introduction to AI\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/courses/addToWishlist",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"courses",
+										"addToWishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/test/64396b022e18466980eaaae3",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"test",
+										"64396b022e18466980eaaae3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AllUsers",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"email\": \"sania@gmail.com\",\r\n    \"password\": \"xd1234rt\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signin/getAllUsers",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signin",
+										"getAllUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/content/con/64511cf3b8ca4d002e89ff44",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"content",
+										"con",
+										"64511cf3b8ca4d002e89ff44"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Courses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/courses/",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"courses",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Single Courses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/courses/6439566891f6698ae4aa5a14",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"courses",
+										"6439566891f6698ae4aa5a14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"643528c33f47a03bc8c791e9\",\r\n    \"teacherId\":\"644cec550c3b6a002de36b7f\",\r\n    \"message\":\"sania khan requested live request\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signin/request-live",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signin",
+										"request-live"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin Operations",
+					"item": [
+						{
+							"name": "Add test",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgyNzQ0NDM4LCJleHAiOjE3MTQyODA0Mzh9.Bh7cu6gv2MDoyKnC41RHLnGiWFtuNokGf2q4OUR-l9g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"testName\": \"Test\",\r\n  \"testContent\": [\r\n    {\r\n      \"question\": \"What is artificial intelligence (AI)?\",\r\n      \"options\": [\"The study of natural language processing\", \" A type of computer hardware\", \"The ability of machines to perform tasks that normally require human intelligence\", \"The study of computer programming\"],\r\n      \"correctOptionIndex\": 2\r\n    },\r\n    {\r\n      \"question\": \"What are some examples of AI applications?\",\r\n      \"options\": [\"Social media platforms\", \"Robotics\", \"Healthcare\", \"All of the above\"],\r\n      \"correctOptionIndex\": 1\r\n    }\r\n  ],\r\n  \"contentId\":\"64396b022e18466980eaaae3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/test/add",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"test",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgyNzQ0NDM4LCJleHAiOjE3MTQyODA0Mzh9.Bh7cu6gv2MDoyKnC41RHLnGiWFtuNokGf2q4OUR-l9g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instructorId\":\"\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/courses/edit/6439566891f6698ae4aa5a14",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"courses",
+										"edit",
+										"6439566891f6698ae4aa5a14"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add content",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgyNzQ0NDM4LCJleHAiOjE3MTQyODA0Mzh9.Bh7cu6gv2MDoyKnC41RHLnGiWFtuNokGf2q4OUR-l9g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lessonName\": \"AI with Game design\",\r\n    \"lessonContent\": [\r\n        {\r\n            \"Def\": \"Artificial Intelligence is a method of making a computer, a computer-controlled robot, or a software think intelligently like the human mind. AI is accomplished by studying the patterns of the human brain and by analyzing the cognitive process. The outcome of these studies develops intelligent software and systems.\"\r\n        }\r\n    ],\r\n    \"courseId\": \"6439566891f6698ae4aa5a14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/content/add",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"content",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add courses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgyNzY1ODU3LCJleHAiOjE3MTQzMDE4NTd9.B9BD_kuZirw9syHpsPmKKf62X_RslJXU_zldQe61Mek",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"courseName\":\"AI with Game Design Level 2\",\r\n    \"maxCapacity\":\"30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/courses/add",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"courses",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM1MjhjMzNmNDdhMDNiYzhjNzkxZTkiLCJlbWFpbCI6InNhbmlhQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmlhIiwibGFzdE5hbWUiOiJraGFuIiwiaWF0IjoxNjgyNzQ0ODc2LCJleHAiOjE3MTQyODA4NzZ9.EIihbmNe-AaMniAk5G-GUNO8Y-QvGmsTL-lZyI077vM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9080/courses/delete/6439566891f6698ae4aa5a14",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"courses",
+										"delete",
+										"6439566891f6698ae4aa5a14"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Instructor",
+					"item": [
+						{
+							"name": "InstructorSignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"hamza\",\r\n    \"lastName\": \"ali\",\r\n    \"email\": \"alih1414@gmail.com\",\r\n    \"dob\": \"10-9-2001\",\r\n    \"age\": \"21\",\r\n    \"password\": \"hello123\",\r\n    \"phone\": \"0202292\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signup/",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signup",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Instructorsign in",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \r\n    \"email\": \"sania@gmail.com\",\r\n    \"password\": \"xd1234rt\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signin/",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all notifications (just for knowing if the request is saved or not)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDViMzdkYzIyMWNjMzAwMmQwYmNiYjMiLCJlbWFpbCI6ImFmZmFxa2hhbjIxMUBnbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJBZmZhcSIsImxhc3ROYW1lIjoia2hhbiIsImlhdCI6MTY4MzY5OTg3NSwiZXhwIjoxNzE1MjM1ODc1fQ.Y5WhhpDWvsDnkc5JiypRwmrQTig1E99ZQqUVR4ur8n0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signin/getAllnotifications",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signin",
+										"getAllnotifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all notifications instructor",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDViMzdkYzIyMWNjMzAwMmQwYmNiYjMiLCJlbWFpbCI6ImFmZmFxa2hhbjIxMUBnbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJBZmZhcSIsImxhc3ROYW1lIjoia2hhbiIsImlhdCI6MTY4MzY5OTg3NSwiZXhwIjoxNzE1MjM1ODc1fQ.Y5WhhpDWvsDnkc5JiypRwmrQTig1E99ZQqUVR4ur8n0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://wandering-boa-wear.cyclic.app/signin/getNotificationsTeacher",
+									"protocol": "https",
+									"host": [
+										"wandering-boa-wear",
+										"cyclic",
+										"app"
+									],
+									"path": [
+										"signin",
+										"getNotificationsTeacher"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request Accept",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDViMzdkYzIyMWNjMzAwMmQwYmNiYjMiLCJlbWFpbCI6ImFmZmFxa2hhbjIxMUBnbWFpbC5jb20iLCJmaXJzdE5hbWUiOiJBZmZhcSIsImxhc3ROYW1lIjoia2hhbiIsImlhdCI6MTY4Mzc4ODQ5NCwiZXhwIjoxNzE1MzI0NDk0fQ.tOV9COe1Rvd5vpmJxtWpoLsbInEb23cj3zWTjalYYyA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"read\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9080/signin/acceptRequest/645b4d90e29709002dc594e8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9080",
+									"path": [
+										"signin",
+										"acceptRequest",
+										"645b4d90e29709002dc594e8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
