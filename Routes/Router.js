@@ -4,6 +4,7 @@ import EventRouter from './event';
 import CourseRouter from './courses';
 import ContentSchema from './content';
 import TestRouter from './test';
+import AliBaba from './AliBaba'
 
 export default {
     SignupRouter,
@@ -11,5 +12,6 @@ export default {
     EventRouter,
     CourseRouter,
     ContentSchema,
-    TestRouter
+    TestRouter,
+    AliBaba
 };

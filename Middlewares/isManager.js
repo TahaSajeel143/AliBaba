@@ -3,7 +3,7 @@ const isManagerOwner = (req, res, next) => {
         res.status(400).send({
             Message: 'instructor not logged In.',
         });
-    } else if (req.user.userType == 'instructor') {
+    } else if (req.user.userType == 'admin') {
         return next();
     } else {
         res.status(400).send({
