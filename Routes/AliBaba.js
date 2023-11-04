@@ -40,4 +40,27 @@ AliBabaRouter.get(
 );
 
 
+AliBabaRouter.get(
+    '/usergetone/:id',
+    AliBaba.getOneProduct
+);
+
+
+
+AliBabaRouter.get(
+    '/usergetall',
+    AliBaba.getAllProducts
+);
+
+
+
+
+
+
+
+
+
+
+
+
 export default AliBabaRouter;
