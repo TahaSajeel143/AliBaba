@@ -6,7 +6,6 @@ import isAdminMiddleware from '../Middlewares/isManager';
 // auth middleware for user
 // import isLoggedInUser from '../Middlewares/loggedIn';
 // // validations
-// import eventValidator from '../validations/event';
 
 const AliBabaRouter = express.Router();
 
@@ -51,11 +50,6 @@ AliBabaRouter.get(
     '/usergetall',
     AliBaba.getAllProducts
 );
-
-
-
-
-
 
 
 
