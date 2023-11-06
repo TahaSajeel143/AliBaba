@@ -70,11 +70,8 @@ const addcategory = async (req, res) => {
   const getAllProducts = (req, res) => {
     productSchema.find({})
       .then(products => {
-        productSchema.countDocuments({}).then(count => {
-          res.status(status.OK).json({
-            count: count,
-            products: products
-          });
+        res.status(status.OK).json({
+          products: products
         });
       })
       .catch(err => {
@@ -85,6 +82,7 @@ const addcategory = async (req, res) => {
         });
       });
   };
+  
   
   
 
