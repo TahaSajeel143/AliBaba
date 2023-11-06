@@ -67,7 +67,12 @@ const addcategory = async (req, res) => {
 
 
 
-  const getAllProducts = (req, res) => {
+
+
+
+
+
+  const getallProducts = (req, res) => {
     productSchema.find({})
       .then(products => {
         res.status(status.OK).json({
@@ -82,6 +87,11 @@ const addcategory = async (req, res) => {
         });
       });
   };
+  
+
+
+
+
   
   
   
@@ -113,7 +123,7 @@ const addcategory = async (req, res) => {
 export default{
     addproduct,
     addcategory,
-    getAllProducts,
+    getallProducts,
     getOneProduct,
 };
 
