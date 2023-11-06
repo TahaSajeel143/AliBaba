@@ -71,7 +71,7 @@ const addcategory = async (req, res) => {
     productSchema.find({})
       .then(products => {
         res.status(status.OK).json({
-          products: products
+          products
         });
       })
       .catch(err => {
