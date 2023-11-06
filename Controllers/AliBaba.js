@@ -88,13 +88,7 @@ const addcategory = async (req, res) => {
         });
       });
   };
-  
 
-
-
-
-  
-  
   
 
 
@@ -121,11 +115,59 @@ const addcategory = async (req, res) => {
       });
     };
 
+
+
+
+    const getAllCategories = (req, res) => {
+      categorySchema.find({})
+        .then(category => {
+          res.status(status.OK).json({
+            category
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(status.INTERNAL_SERVER_ERROR).json({
+            Message: 'Internal server error',
+            Error: err.message,
+          });
+        });
+    };
+
+
+
+    const getOnecategory = (req, res) => {
+      const { id } = req.params; // Assuming the city is passed as a parameter
+      
+      categorySchema.findOne({_id:id})
+        .then (category => {
+        if (category) {
+          res.status(status.OK).send(category);
+        } else {
+          res.status(status.NOT_FOUND).send({
+          Message: 'product not found.',
+          });
+        }
+        })
+        .catch(err => {
+        console.log(err)
+        res.status(status.INTERNAL_SERVER_ERROR).send({
+          Message: 'Internal server error',
+          Error: err,
+        });
+        });
+      };
+
+
+
+
 export default{
     addproduct,
     addcategory,
     getAllProducts,
+    getAllCategories,
     getOneProduct,
+    getOnecategory,
 };
 
 

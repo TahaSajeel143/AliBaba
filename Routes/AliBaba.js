@@ -52,6 +52,26 @@ AliBabaRouter.get(
 );
 
 
+AliBabaRouter.get(
+    '/allcategories',
+    isAdminMiddleware.isManagerOwner,
+    AliBaba.getAllCategories
+);
+
+
+
+AliBabaRouter.get(
+    '/usergetallcategories',
+    AliBaba.getAllCategories
+);
+
+
+
+
+
+
+
+
 
 
 
