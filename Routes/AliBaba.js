@@ -67,7 +67,19 @@ AliBabaRouter.get(
 
 
 
+AliBabaRouter.get(
+    '/getonecategory/:id',
+    isAdminMiddleware.isManagerOwner,
+    AliBaba.getOnecategory
+);
 
+
+
+
+AliBabaRouter.get(
+    '/usergetonecategory/:id',
+    AliBaba.getOnecategory
+);
 
 
 
