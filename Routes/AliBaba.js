@@ -28,7 +28,7 @@ AliBabaRouter.post(
 AliBabaRouter.get(
     '/getall',
     isAdminMiddleware.isManagerOwner,
-    AliBaba.getallProducts
+    AliBaba.getAllProducts
 );
 
 
@@ -48,7 +48,7 @@ AliBabaRouter.get(
 
 AliBabaRouter.get(
     '/usergetall',
-    AliBaba.getallProducts
+    AliBaba.getAllProducts
 );
 
 

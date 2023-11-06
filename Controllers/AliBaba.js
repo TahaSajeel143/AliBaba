@@ -72,22 +72,32 @@ const addcategory = async (req, res) => {
 
 
 
-  const getallProducts = (req, res) => {
+  const getAllProducts = (req, res) => {
+    // Assuming status is defined and propertySchema is correctly defined
+    // Make sure you've established a database connection using Mongoose
+  
+    // Use propertySchema to find properties in the database
     productSchema.find({})
-      .then(products => {
-        res.status(status.OK).json({
-          products
-        });
+      .then(product => {
+        if (product.length > 0) {
+          // Send the properties as a response if found
+          res.status(status.OK).send(product);
+        } else {
+          // Send a "Not Found" response if no properties are found
+          res.status(status.NOT_FOUND).send({
+            Message: 'No property found.',
+          });
+        }
       })
       .catch(err => {
+        // Handle any errors that occur during the database query
         console.error(err);
-        res.status(status.INTERNAL_SERVER_ERROR).json({
+        res.status(status.INTERNAL_SERVER_ERROR).send({
           Message: 'Internal server error',
           Error: err.message,
         });
       });
   };
-  
 
 
 
@@ -123,7 +133,7 @@ const addcategory = async (req, res) => {
 export default{
     addproduct,
     addcategory,
-    getallProducts,
+    getAllProducts,
     getOneProduct,
 };
 
