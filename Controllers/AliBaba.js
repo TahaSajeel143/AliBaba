@@ -97,7 +97,7 @@ const addcategory = async (req, res) => {
         res.status(status.OK).send(product);
       } else {
         res.status(status.NOT_FOUND).send({
-        Message: 'user not found.',
+        Message: 'product not found.',
         });
       }
       })
