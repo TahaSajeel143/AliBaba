@@ -42,11 +42,12 @@ const addproduct = async (req, res) => {
 
 const addcategory = async (req, res) => {
     try {
-        const { category, description } = req.body;
+        const { category, description, path } = req.body;
   
         const newcategory = new categorySchema({
             category,
             description,
+            path,
         });
   
         const savedcategory = await newcategory.save(); // Use await here
