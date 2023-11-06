@@ -67,26 +67,26 @@ const addcategory = async (req, res) => {
 
 
 
-
   const getAllProducts = (req, res) => {
-	productSchema.find({})
-	  .then(product => {
-		if (product.length > 0) {
-		  res.status(status.OK).send(product);
-		} else {
-		  res.status(status.NOT_FOUND).send({
-			Message: 'No hotels found.',
-		  });
-		}
-	  })
-	  .catch(err => {
-		console.error(err);
-		res.status(status.INTERNAL_SERVER_ERROR).send({
-		  Message: 'Internal server error',
-		  Error: err.message,
-		});
-	  });
+    productSchema.find({})
+      .then(products => {
+        productSchema.countDocuments({}).then(count => {
+          res.status(status.OK).json({
+            count: count,
+            products: products
+          });
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(status.INTERNAL_SERVER_ERROR).json({
+          Message: 'Internal server error',
+          Error: err.message,
+        });
+      });
   };
+  
+  
 
 
 
@@ -118,3 +118,5 @@ export default{
     getAllProducts,
     getOneProduct,
 };
+
+
