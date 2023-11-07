@@ -83,7 +83,17 @@ AliBabaRouter.get(
 
 
 
+AliBabaRouter.post(
+    '/addtocart',
+    AliBaba.AddToCart
+);
 
+
+
+AliBabaRouter.get(
+    '/getcarts',
+    AliBaba.getAllCarts
+);
 
 
 

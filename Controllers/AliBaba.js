@@ -1,6 +1,7 @@
 import status from 'http-status';
 import productSchema from '../Models/productSchema';
 import categorySchema from '../Models/categorySchema';
+import addTOCartSchema from '../Models/addTOCartSchema';
 
 const addproduct = async (req, res) => {
     try {
@@ -163,6 +164,59 @@ const addcategory = async (req, res) => {
 
 
 
+  const AddToCart = (req, res) => {
+      const { product, user } = req.body;
+    
+      // Assuming you have properly defined the addtoCartSchema model
+      const AddToCart = new addTOCartSchema({
+        product,
+        user,
+      });
+    
+      AddToCart
+        .save()
+        .then(savedAddToCart => {
+          res.status(status.OK).send({
+            savedAddToCart,
+            Message: 'Cart Added Successfully',
+            type: status.OK,
+          });
+        })
+        .catch(err => {
+          res.status(status.INTERNAL_SERVER_ERROR).send({
+            Message: 'Internal Server Error',
+            error: err.message, // Use err.message to capture the error message
+          });
+        });
+    };
+
+
+
+
+
+    const getAllCarts = (req, res) => {
+      addTOCartSchema.find({})
+        .then(addtocart => {
+          res.status(status.OK).json({
+            addtocart
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          res.status(status.INTERNAL_SERVER_ERROR).json({
+            Message: 'Internal server error',
+            Error: err.message,
+          });
+        });
+    };
+
+
+
+
+
+
+
+
 export default{
     addproduct,
     addcategory,
@@ -170,6 +224,9 @@ export default{
     getAllCategories,
     getOneProduct,
     getOnecategory,
+    AddToCart,
+    getAllCarts,
+
 };
 
 
