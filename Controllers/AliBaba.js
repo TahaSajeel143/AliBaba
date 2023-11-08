@@ -212,6 +212,36 @@ const addcategory = async (req, res) => {
 
 
 
+    const patchproducts = async (req, res) => {
+      const { productId } = req.params;
+    
+      try {
+        // Find the city by its ID
+        let product = await productSchema.findById(productId);
+    
+        if (!product) {
+          // Return a 404 response with a message indicating that the city was not found
+          return res.status(404).json({ success: false, message: 'City not found' });
+        }
+    
+        // Update the existing city's settings with the provided data
+        product.set(req.body);
+        await product.save();
+    
+        res.status(200).json({ success: true, message: 'City settings updated', data: product });
+      } catch (error) {
+        console.error('Error updating city settings:', error);
+        res.status(500).json({ success: false, message: 'Failed to update city settings' });
+      }
+    };
+    
+    
+    
+
+
+
+
+
 
 
 
@@ -226,7 +256,6 @@ export default{
     getOnecategory,
     AddToCart,
     getAllCarts,
+    patchproducts,
 
 };
-
-

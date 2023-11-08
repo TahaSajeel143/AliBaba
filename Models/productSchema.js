@@ -21,7 +21,12 @@ const productSchema = new mongoose.Schema({
     ref: 'category',
 }],
 images:[],
-quantity:Number,
+orderDetails:[{
+  size:String,
+  price:Number,
+  quantity:Number
+  
+}]
 
 
 

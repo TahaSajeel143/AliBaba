@@ -99,4 +99,13 @@ AliBabaRouter.get(
 
 
 
+AliBabaRouter.patch(
+    '/patch/:productId',
+    isAdminMiddleware.isManagerOwner,
+    AliBaba.patchproducts
+);
+
+
+
+
 export default AliBabaRouter;
