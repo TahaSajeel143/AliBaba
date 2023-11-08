@@ -165,12 +165,13 @@ const addcategory = async (req, res) => {
 
 
   const AddToCart = (req, res) => {
-      const { product, user } = req.body;
+      const { product, user, orderDetails } = req.body;
     
       // Assuming you have properly defined the addtoCartSchema model
       const AddToCart = new addTOCartSchema({
         product,
         user,
+        orderDetails,
       });
     
       AddToCart
