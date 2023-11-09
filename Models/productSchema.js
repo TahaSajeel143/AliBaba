@@ -24,9 +24,8 @@ images:[],
 orderDetails:[{
   size:String,
   price:Number,
-  quantity:Number
-  
-}]
+  quantity:Number,
+  }]
 
 
 
