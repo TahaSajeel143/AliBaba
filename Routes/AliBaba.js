@@ -4,7 +4,7 @@ import AliBaba from '../Controllers/AliBaba';
 // auth middlewares for admin
 import isAdminMiddleware from '../Middlewares/isManager';
 // auth middleware for user
-// import isLoggedInUser from '../Middlewares/loggedIn';
+ import isLoggedInUser from '../Middlewares/loggedIn';
 // // validations
 
 const AliBabaRouter = express.Router();
@@ -104,6 +104,20 @@ AliBabaRouter.patch(
     isAdminMiddleware.isManagerOwner,
     AliBaba.patchproducts
 );
+
+
+
+
+
+AliBabaRouter.post(
+    '/buynow',
+    isLoggedInUser.isLoggedIn,
+    AliBaba.buyNow
+);
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@ import status from 'http-status';
 import productSchema from '../Models/productSchema';
 import categorySchema from '../Models/categorySchema';
 import addTOCartSchema from '../Models/addTOCartSchema';
+import buyNowSchema from '../Models/buyNowSchema';
 
 const addproduct = async (req, res) => {
     try {
@@ -240,7 +241,37 @@ const addcategory = async (req, res) => {
     
 
 
-
+    const buyNow = async (req, res) => {
+      const { totalPrice, quantity, product } = req.body;
+  
+  
+    const newbuyNow = new buyNowSchema
+      try {
+        
+          const purchase = {
+            totalPrice,
+            quantity,
+            product,
+  
+      
+              // You can add more details as needed.
+          };
+  
+      
+          res.status(status.OK).send({
+              purchase,
+              message: 'Purchase Successful',
+              type: status.OK,
+          });
+      } catch (error) {
+          console.error('Error during purchase:', error);
+          res.status(status.INTERNAL_SERVER_ERROR).send({
+              message: 'Purchase Failed',
+              error: error.message,
+              type: status.INTERNAL_SERVER_ERROR,
+          });
+      }
+  };
 
 
 
@@ -258,5 +289,6 @@ export default{
     AddToCart,
     getAllCarts,
     patchproducts,
+    buyNow,
 
 };
