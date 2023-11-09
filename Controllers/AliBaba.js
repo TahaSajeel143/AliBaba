@@ -242,7 +242,7 @@ const addcategory = async (req, res) => {
 
 
     const buyNow = async (req, res) => {
-      const { totalPrice, quantity, product } = req.body;
+      const { totalPrice, quantity, product, user } = req.body;
   
   
     const newbuyNow = new buyNowSchema
@@ -252,6 +252,7 @@ const addcategory = async (req, res) => {
             totalPrice,
             quantity,
             product,
+            user,
   
       
               // You can add more details as needed.
