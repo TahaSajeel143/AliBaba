@@ -118,6 +118,13 @@ AliBabaRouter.post(
 
 
 
+AliBabaRouter.delete(
+    '/delete/:cartItemId',
+    AliBaba.DeleteCartItem
+);
+
+
+
 
 
 

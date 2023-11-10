@@ -276,6 +276,42 @@ const addcategory = async (req, res) => {
 
 
 
+  const DeleteCartItem = (req, res) => {
+    const { cartItemId } = req.params; // Assuming cartItemId is the parameter for identifying the cart item to be deleted
+  
+    // Assuming you have properly defined the CartItemSchema model
+    addTOCartSchema.findByIdAndRemove(cartItemId)
+      .then(deletedCartItem => {
+        if (!deletedCartItem) {
+          return res.status(status.NOT_FOUND).send({
+            Message: 'Cart item not found',
+            type: status.NOT_FOUND,
+          });
+        }
+  
+        res.status(status.OK).send({
+          deletedCartItem,
+          Message: 'Cart item deleted successfully',
+          type: status.OK,
+        });
+      })
+      .catch(err => {
+        res.status(status.INTERNAL_SERVER_ERROR).send({
+          Message: 'Internal Server Error',
+          error: err.message,
+        });
+      });
+  };
+  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -291,5 +327,6 @@ export default{
     getAllCarts,
     patchproducts,
     buyNow,
+    DeleteCartItem,
 
 };
