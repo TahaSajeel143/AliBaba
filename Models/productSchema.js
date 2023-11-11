@@ -6,8 +6,8 @@ const productSchema = new mongoose.Schema({
   reviews:Number,
   buyers:Number,
   priceOfPieces:[{
-    price:String,
-    pieces:String,
+    price:Number,
+    pieces:Number,
   }],
   benefits:String,
   color:[],

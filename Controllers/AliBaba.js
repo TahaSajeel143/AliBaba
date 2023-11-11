@@ -1,4 +1,5 @@
 import status from 'http-status';
+import Pusher from 'pusher';
 import productSchema from '../Models/productSchema';
 import categorySchema from '../Models/categorySchema';
 import addTOCartSchema from '../Models/addTOCartSchema';
@@ -303,6 +304,7 @@ const addcategory = async (req, res) => {
       });
   };
   
+ 
 
 
 
@@ -312,6 +314,9 @@ const addcategory = async (req, res) => {
 
 
 
+
+
+  
 
 
 
@@ -328,5 +333,7 @@ export default{
     patchproducts,
     buyNow,
     DeleteCartItem,
+   
+   
 
 };
