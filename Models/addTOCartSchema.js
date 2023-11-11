@@ -5,14 +5,14 @@ const addToCartSchema = new mongoose.Schema({
     size: String,
     price: Number,
     quantity: Number,
-    product: 
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'product',
-      },
+   
     
   }],
-
+  product: 
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'product',
+  },
 
   user: [
     {
