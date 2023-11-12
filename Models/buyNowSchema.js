@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
 const buyNowSchema = new mongoose.Schema({
-  totalPrice: [],
-  quantity: [],
+  totalPrice: Number,
+  quantity: Number,
   product: [
     {
       type: mongoose.Schema.Types.ObjectId,
