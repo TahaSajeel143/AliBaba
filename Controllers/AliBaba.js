@@ -7,7 +7,7 @@ import buyNowSchema from '../Models/buyNowSchema';
 
 const addproduct = async (req, res) => {
     try {
-        const { title ,description, reviews, buyers,  priceOfPieces, benefits, color, customization, leadTime, category, images } = req.body;
+        const { title ,description, reviews, buyers,  priceOfPieces, benefits, color, customization, leadTime, category, images, orderDetails } = req.body;
 
         const newProduct = new productSchema({
             title,
@@ -21,6 +21,7 @@ const addproduct = async (req, res) => {
             leadTime,
             category,
             images,
+            orderDetails
         });
 
         const savedProduct = await newProduct.save(); // Use await here
