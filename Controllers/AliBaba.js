@@ -25,8 +25,7 @@ const addproduct = async (req, res) => {
         });
 
         const savedProduct = await newProduct.save(); // Use await here
-
-        res.status(status.OK).send({
+         res.status(status.OK).send({
             savedProduct, // Use the correct variable name
             Message: 'Product Added Successfully',
             type: status.OK,
