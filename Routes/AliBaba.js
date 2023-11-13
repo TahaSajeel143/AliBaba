@@ -124,7 +124,11 @@ AliBabaRouter.delete(
 );
 
 
-
+AliBabaRouter.delete(
+    '/deleteproduct/:productId',
+    isAdminMiddleware.isManagerOwner,
+    AliBaba.DeleteProduct
+);
 
 
 
