@@ -4,9 +4,7 @@ const addToCartSchema = new mongoose.Schema({
   orderDetails: [{
     size: String,
     price: Number,
-    quantity: Number,
-   
-    
+    quantity: Number, 
   }],
   product: 
   {
@@ -21,6 +19,22 @@ const addToCartSchema = new mongoose.Schema({
     },
 
   ],
+shippingAddress:[{
+  country:String,
+  address1:String,
+  address2:String,
+  province:String,
+  city:String,
+  zipCode:Number,
+  fullName:String,
+  phoneNumber:String,
+  tag:[],
+}],
+totalquantity:Number,
+shippingPrice:Number,
+totalPrice:Number,
+Status:Boolean,
+  
 
 },
   {

@@ -25,7 +25,12 @@ orderDetails:[{
   size:String,
   price:Number,
   quantity:Number,
-  }]
+  }],
+  addedby: 
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'ref',
+  },
 
 
 

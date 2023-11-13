@@ -109,11 +109,6 @@ AliBabaRouter.patch(
 
 
 
-AliBabaRouter.post(
-    '/buynow',
-    isLoggedInUser.isLoggedIn,
-    AliBaba.buyNow
-);
 
 
 
@@ -131,6 +126,14 @@ AliBabaRouter.delete(
 );
 
 
+
+
+
+AliBabaRouter.patch(
+    '/patchcart/:cartItemId',
+    isLoggedInUser.isLoggedIn,
+    AliBaba.patchCart
+);
 
 
 
