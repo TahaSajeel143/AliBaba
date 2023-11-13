@@ -1,5 +1,4 @@
 import status from 'http-status';
-import Pusher from 'pusher';
 import productSchema from '../Models/productSchema';
 import categorySchema from '../Models/categorySchema';
 import addTOCartSchema from '../Models/addTOCartSchema';
@@ -40,9 +39,6 @@ const addproduct = async (req, res) => {
 };
 
 
-
-
-
 const addcategory = async (req, res) => {
     try {
         const { category, description, path, images } = req.body;
@@ -73,12 +69,7 @@ const addcategory = async (req, res) => {
 
 
 
-
-
-
-
-
-  const getAllProducts = (req, res) => {
+const getAllProducts = (req, res) => {
     productSchema.find({})
       .then(products => {
         res.status(status.OK).json({
@@ -95,10 +86,7 @@ const addcategory = async (req, res) => {
   };
 
   
-
-
-
-  const getOneProduct = (req, res) => {
+const getOneProduct = (req, res) => {
     const { id } = req.params; // Assuming the city is passed as a parameter
     
     productSchema.findOne({_id:id})
@@ -121,9 +109,7 @@ const addcategory = async (req, res) => {
     };
 
 
-
-
-    const getAllCategories = (req, res) => {
+const getAllCategories = (req, res) => {
       categorySchema.find({})
         .then(category => {
           res.status(status.OK).json({
@@ -140,8 +126,7 @@ const addcategory = async (req, res) => {
     };
 
 
-
-    const getOnecategory = (req, res) => {
+ const getOnecategory = (req, res) => {
       const { id } = req.params; // Assuming the city is passed as a parameter
       
       categorySchema.findOne({_id:id})
@@ -164,9 +149,7 @@ const addcategory = async (req, res) => {
       };
 
 
-
-
-  const AddToCart = (req, res) => {
+const AddToCart = (req, res) => {
       const { product, user, orderDetails } = req.body;
     
       // Assuming you have properly defined the addtoCartSchema model
@@ -194,10 +177,7 @@ const addcategory = async (req, res) => {
     };
 
 
-
-
-
-    const getAllCarts = (req, res) => {
+const getAllCarts = (req, res) => {
       addTOCartSchema.find({})
         .then(addtocart => {
           res.status(status.OK).json({
@@ -240,9 +220,7 @@ const addcategory = async (req, res) => {
     
     
     
-
-
-    const buyNow = async (req, res) => {
+const buyNow = async (req, res) => {
       const { totalPrice, quantity, product, user } = req.body;
   
   
@@ -274,7 +252,6 @@ const addcategory = async (req, res) => {
           });
       }
   };
-
 
 
   const DeleteCartItem = (req, res) => {
