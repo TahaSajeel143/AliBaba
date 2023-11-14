@@ -164,6 +164,12 @@ const AddToCart = (req, res) => {
         product,
         user,
         orderDetails,
+        shippingAddress,
+        totalQuantity,
+        shippingPrice,
+        totalPrice,
+        status,
+
       });
     
       AddToCart
@@ -316,6 +322,66 @@ const getAllCarts = (req, res) => {
 
 
 
+
+
+
+
+  
+
+  
+
+
+  // const pusher = new Pusher({
+  //   appId: process.env.app_id,
+  //   key: process.env.key,
+  //   secret: process.env.secret,
+  //   cluster: process.env.cluster,
+  //   useTLS: true,
+  // });
+  
+  // const addtocart = async (req, res) => {
+  //   try {
+  //     const { userId, productId, } = req.body;
+  
+  //     // Add your logic to save the cart information in the database
+  
+  //     // Trigger a 'cart-added' event to notify the admin
+  //     pusher.trigger('admin-channel', 'cart-added', {
+  //       userId,
+  //       productId,
+        
+        
+  //     });
+  //     console.log('After triggering event');
+  
+  //     res.status(200).json({ success: true, message: 'Product added to cart successfully' });
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     res.status(500).json({ success: false, message: 'Internal Server Error' });
+  //   }
+  // };
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default{
     addproduct,
     addcategory,
@@ -323,12 +389,13 @@ export default{
     getAllCategories,
     getOneProduct,
     getOnecategory,
-    AddToCart,
+     AddToCart,
     getAllCarts,
     patchproducts,
     DeleteCartItem,
     DeleteProduct,
     patchCart,
+    // addtocart
 
 
 };

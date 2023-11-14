@@ -90,6 +90,13 @@ AliBabaRouter.post(
 
 
 
+// AliBabaRouter.post(
+//     '/addtocart',
+//     AliBaba.addtocart
+// );
+
+
+
 AliBabaRouter.get(
     '/getcarts',
     AliBaba.getAllCarts

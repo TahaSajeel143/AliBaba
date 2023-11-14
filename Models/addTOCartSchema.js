@@ -30,10 +30,10 @@ shippingAddress:[{
   phoneNumber:String,
   tag:[],
 }],
-totalquantity:Number,
+totalQuantity:Number,
 shippingPrice:Number,
 totalPrice:Number,
-Status:Boolean,
+status:Boolean,
   
 
 },
