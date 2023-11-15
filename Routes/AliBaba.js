@@ -143,4 +143,12 @@ AliBabaRouter.patch(
 
 
 
+AliBabaRouter.post(
+    '/feedback',
+    AliBaba.addfeedback
+);
+
+
+
+
 export default AliBabaRouter;

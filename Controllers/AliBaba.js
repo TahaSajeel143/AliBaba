@@ -3,6 +3,7 @@ import Pusher from 'pusher';
 import productSchema from '../Models/productSchema';
 import categorySchema from '../Models/categorySchema';
 import addTOCartSchema from '../Models/addTOCartSchema';
+import feedbackSchema from '../Models/feedbackSchema';
 
 
 const addproduct = async (req, res) => {
@@ -322,8 +323,31 @@ const getAllCarts = (req, res) => {
 
 
 
-
-
+  const addfeedback = async (req, res) => {
+    try {
+        const { user, imageUrl, comment } = req.body;
+  
+        const newfeedback = new feedbackSchema({
+            user,
+            imageUrl,
+            comment,
+        });
+  
+        const savedfeedback = await newfeedback.save(); // Use await here
+  
+        res.status(status.OK).send({
+            savedfeedback, // Use the correct variable name
+            Message: 'Product Added Successfully',
+            type: status.OK,
+        });
+    } catch (err) {
+        console.error('Error adding product:', err); // Log the error for debugging
+        res.status(status.INTERNAL_SERVER_ERROR).send({
+            Message: 'Internal Server Error',
+            error: err.message, // Send the error message in the response
+        });
+    }
+  };
 
 
   
@@ -395,7 +419,8 @@ export default{
     DeleteCartItem,
     DeleteProduct,
     patchCart,
-    // addtocart
+    // addtocart,
+    addfeedback,
 
 
 };
