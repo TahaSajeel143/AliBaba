@@ -157,18 +157,18 @@ const getAllCategories = (req, res) => {
 
 
 const AddToCart = (req, res) => {
-      const { product, user, orderDetails } = req.body;
+      const { product, user, orderDetails, shippingAddress, totalQuantity, shippingPrice, totalPrice, orderStatus } = req.body;
     
       // Assuming you have properly defined the addtoCartSchema model
       const AddToCart = new addTOCartSchema({
         product,
         user,
         orderDetails,
-        shippingAddress,
-        totalQuantity,
-        shippingPrice,
-        totalPrice,
-        status,
+        // shippingAddress,
+        // totalQuantity,
+        // shippingPrice,
+        // totalPrice,
+        // status,
 
       });
     

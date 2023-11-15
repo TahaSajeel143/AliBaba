@@ -33,7 +33,7 @@ shippingAddress:[{
 totalQuantity:Number,
 shippingPrice:Number,
 totalPrice:Number,
-status:Boolean,
+orderStatus:Boolean,
   
 
 },

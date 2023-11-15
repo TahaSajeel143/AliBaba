@@ -138,7 +138,6 @@ AliBabaRouter.delete(
 
 AliBabaRouter.patch(
     '/patchcart/:cartItemId',
-    isLoggedInUser.isLoggedIn,
     AliBaba.patchCart
 );
 
