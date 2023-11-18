@@ -13,6 +13,7 @@ const sellerSchema = new mongoose.Schema({
     selectedCategory: String,
     selectedPlatforms: [],
     sellerAccountStatus:Boolean,
+    isVerified:Boolean,
  
 
 

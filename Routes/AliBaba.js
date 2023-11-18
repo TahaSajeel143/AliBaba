@@ -90,10 +90,10 @@ AliBabaRouter.post(
 
 
 
-// AliBabaRouter.post(
-//     '/addtocart',
-//     AliBaba.addtocart
-// );
+AliBabaRouter.post(
+    '/notification',
+    AliBaba.Notification
+);
 
 
 

@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-   firstname:String,
-   lastname:String,
+   firstName:String,
+   lastName:String,
    email:String,
    password:String,
    purpose:String,
-   companyname:String,
+   companyName:String,
    phone:String,
    country:String,
-   isnotbussinessentinty:String,
+   isNotBussinessEntity:Boolean,
 }, {
     timestamps: true,
 }, );
