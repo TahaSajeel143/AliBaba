@@ -151,4 +151,16 @@ AliBabaRouter.post(
 
 
 
+
+AliBabaRouter.post(
+    '/addseller',
+    AliBaba.postSeller
+);
+
+
+
+
+
+
+
 export default AliBabaRouter;

@@ -4,6 +4,7 @@ import productSchema from '../Models/productSchema';
 import categorySchema from '../Models/categorySchema';
 import addTOCartSchema from '../Models/addTOCartSchema';
 import feedbackSchema from '../Models/feedbackSchema';
+import sellerSchema from '../Models/sellerSchema';
 
 
 const addproduct = async (req, res) => {
@@ -352,6 +353,43 @@ const getAllCarts = (req, res) => {
 
   
 
+  const postSeller = async (req, res) => {
+    try {
+        const { bussinessCategory, companyName, country, email, firstName, lastName, otherPlatform, phoneNo, preferredOption, selectedCategory, selectedPlatforms, sellerAccountStatus } = req.body;
+  
+        const newseller = new sellerSchema({
+          bussinessCategory,
+          companyName,
+          country,
+          email,
+          firstName,
+          lastName,
+          otherPlatform,
+          phoneNo,
+          preferredOption,
+          selectedCategory,
+          selectedPlatforms,
+          sellerAccountStatus,
+        });
+  
+        const savedseller = await newseller.save(); // Use await here
+  
+        res.status(status.OK).send({
+            savedseller, // Use the correct variable name
+            Message: 'seller Added Successfully',
+            type: status.OK,
+        });
+    } catch (err) {
+        console.error('Error adding product:', err); // Log the error for debugging
+        res.status(status.INTERNAL_SERVER_ERROR).send({
+            Message: 'Internal Server Error',
+            error: err.message, // Send the error message in the response
+        });
+    }
+  };
+
+
+
   
 
 
@@ -421,6 +459,7 @@ export default{
     patchCart,
     // addtocart,
     addfeedback,
+    postSeller,
 
 
 };
